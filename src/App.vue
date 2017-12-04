@@ -1,18 +1,18 @@
 <template>
-  <div id="app">
-  	<pta-toolbar/>
+  <v-app id="inspire" dark>
+  	<pta-toolbar :projetos="projetoList" />
   	<v-content>
       <v-container fill-height>
-        <v-layout justify-center align-center>
+        <v-layout justify-center >
         	<router-view/>
         </v-layout>
       </v-container>
     </v-content>
-  </div>
+  </v-app>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 import PtaToolbar from './components/Pta-Toolbar';
 
 export default {
@@ -25,6 +25,11 @@ export default {
 			getAll: 'getAll',
 		}),
 	},
+	computed: {
+		...mapGetters({
+			projetoList: 'getProjetoList',
+		}),
+	},
 	created() {
 		this.getAll();
 	},
@@ -32,11 +37,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+
 </style>

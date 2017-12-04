@@ -3,6 +3,9 @@ import axios from 'axios';
 export default {
 
 	getAll({ commit }) {
+		axios.get('projeto-list')
+		.then((res) => { commit('projeto_list', res.data); });
+
 		axios.get('atividade-custeio-list')
 		.then((res) => { commit('atividade_custeio_list', res.data); });
 
@@ -23,9 +26,6 @@ export default {
 
 		axios.get('plano-interno-list')
 		.then((res) => { commit('plano_interno_list', res.data); });
-
-		axios.get('projeto-list')
-		.then((res) => { commit('projeto_list', res.data); });
 
 		axios.get('som-custeio-list')
 		.then((res) => { commit('som_custeio_list', res.data); });

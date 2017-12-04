@@ -1,17 +1,17 @@
 <template>
-  <v-app dark id="inspire">
-
-    <v-navigation-drawer absolute clipped enable-resize-watcher v-model="drawer" app>
+  <div>
+    <v-navigation-drawer absolute clipped v-model="drawer" app>
       <v-list dense>
-        <v-list-tile v-for="item in projetos" :key="item" exact>
+        <v-list-tile v-for="projeto in projetos" :key="projeto.id_projeto" exact @click="currentProjeto(projeto)">
           <v-list-tile-action>
-            <v-icon>add</v-icon>
+            <v-icon>assignment</v-icon>
           </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>
-              Title
-            </v-list-tile-title>
-          </v-list-tile-content>
+          <v-tooltip right>
+            <v-list-tile-content slot="activator">
+              <v-list-tile-title>{{projeto.sigla}}</v-list-tile-title>
+            </v-list-tile-content>
+              <span>{{projeto.nome}}</span>
+          </v-tooltip>
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
@@ -20,12 +20,13 @@
       <v-toolbar-title>
         <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-toolbar-title>
-    </v-toolbar>
-    
-  </v-app>
+    </v-toolbar> 
+  </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
 	props: [
 		'projetos',
@@ -33,6 +34,15 @@ export default {
 	data: () => ({
 		drawer: null,
 	}),
+	methods: {
+		...mapMutations({
+			projetoAtual: 'setProjetoAtual',
+		}),
+		currentProjeto(projeto) {
+			this.projetoAtual(projeto);
+			this.$router.push({ name: 'Projeto', params: { sigla: projeto.sigla } });
+		},
+	},
 };
 </script>
 
