@@ -13,7 +13,7 @@
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-import PtaToolbar from './components/Pta-Toolbar';
+import PtaToolbar from './components/app-components/Pta-Toolbar';
 
 export default {
 	name: 'app',

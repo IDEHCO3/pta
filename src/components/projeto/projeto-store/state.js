@@ -4,4 +4,5 @@ export default {
 	id_unidade_organizacional: null,
 	nome: '',
 	sigla: '',
+	atividades: [],
 };

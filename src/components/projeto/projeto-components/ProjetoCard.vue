@@ -5,9 +5,6 @@
     <v-btn icon>
       <v-icon>search</v-icon>
     </v-btn>
-    <v-btn icon>
-      <v-icon>more_vert</v-icon>
-    </v-btn>
   </v-toolbar>
 </template>
 
@@ -26,6 +23,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .toolbar-title{
-	font-size: 2em;
+	font-size: 1.5em;
 }
 </style>

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ProjetoTabs from './projetoTabs';
+import ProjetoTabs from './ProjetoTabs';
 
 export default {
 	name: 'ProjetoExpansionPanels',

@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/app-components/home/Home';
-import Projeto from '@/components/app-components/projeto/Projeto';
+import Home from '@/components/home/Home';
+import Projeto from '@/components/projeto/Projeto';
 
 Vue.use(Router);
 
