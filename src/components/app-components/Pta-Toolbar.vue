@@ -1,14 +1,14 @@
 <template>
   <div>
-    <v-navigation-drawer absolute clipped v-model="drawer" app>
+    <v-navigation-drawer absolute clipped v-model="drawer" app class="cyan darken-1">
       <v-list dense>
         <v-list-tile v-for="projeto in projetos" :key="projeto.id_projeto" exact @click="currentProjeto(projeto)">
           <v-list-tile-action>
-            <v-icon>assignment</v-icon>
+            <v-icon color="black">assignment</v-icon>
           </v-list-tile-action>
           <v-tooltip right>
             <v-list-tile-content slot="activator">
-              <v-list-tile-title>{{projeto.sigla}}</v-list-tile-title>
+              <v-list-tile-title class="black--text">{{projeto.sigla}}</v-list-tile-title>
             </v-list-tile-content>
               <span>{{projeto.nome}}</span>
           </v-tooltip>
@@ -16,9 +16,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar color="blue-grey darken-3" dense fixed clipped-left app>
+    <v-toolbar dense fixed clipped-left app>
       <v-toolbar-title>
-        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+        <v-toolbar-side-icon color="cyan--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-toolbar-title>
     </v-toolbar> 
   </div>

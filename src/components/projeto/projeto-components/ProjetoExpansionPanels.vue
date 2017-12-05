@@ -1,9 +1,9 @@
 <template>
-  <v-expansion-panel expand>
-    <v-expansion-panel-content v-for="(item,i) in 5" :key="i" v-bind:value="item === 2">
-      <div slot="header">Item</div>
+  <v-expansion-panel popout>
+    <v-expansion-panel-content v-for="(atividade) in atividades" :key="atividade.id_atividade">
+      <div slot="header">{{atividade.nome}}</div>
       <v-card>
-				<projeto-tabs></projeto-tabs>
+		<projeto-tabs></projeto-tabs>
       </v-card>
     </v-expansion-panel-content>
   </v-expansion-panel>
@@ -14,6 +14,7 @@ import ProjetoTabs from './ProjetoTabs';
 
 export default {
 	name: 'ProjetoExpansionPanels',
+	props: ['atividades'],
 	components: {
 		ProjetoTabs,
 	},

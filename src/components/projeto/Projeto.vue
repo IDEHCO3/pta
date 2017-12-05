@@ -1,7 +1,12 @@
 <template>
 	<div id="projeto">
-		<projeto-card :nome="projeto.nome"></projeto-card>
-		<projeto-expansion-panels></projeto-expansion-panels>
+		<projeto-card 
+		:nome="projeto.nome"
+		/>
+
+		<projeto-expansion-panels 
+		:atividades="projeto.atividades"
+		/>
   </div>
 </template>
 

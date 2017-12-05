@@ -1,18 +1,15 @@
 <template>
   <v-tabs fixed icons centered>
-    <v-tabs-bar dark color="cyan">
-      <v-tabs-slider color="yellow"></v-tabs-slider>
+    <v-tabs-bar dark color="blue-grey darken-1">
+      <v-tabs-slider color="cyan"></v-tabs-slider>
       <v-tabs-item href="#tab-1">
-        <v-icon>phone</v-icon>
-        Recents
+        <v-icon color="cyan">info</v-icon>
       </v-tabs-item>
       <v-tabs-item href="#tab-2">
-        <v-icon>favorite</v-icon>
-        Favorites
+        <v-icon color="cyan">monetization_on</v-icon>
       </v-tabs-item>
       <v-tabs-item href="#tab-3">
-        <v-icon>account_box</v-icon>
-        Nearby
+        <v-icon color="cyan">insert_chart</v-icon>
       </v-tabs-item>
     </v-tabs-bar>
     <v-tabs-items>

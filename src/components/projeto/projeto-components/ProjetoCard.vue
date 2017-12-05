@@ -1,10 +1,15 @@
 <template>
   <v-toolbar extended>
-    <v-toolbar-title class="toolbar-title">{{ nome }}</v-toolbar-title>
-    <v-spacer></v-spacer>
-    <v-btn icon>
-      <v-icon>search</v-icon>
-    </v-btn>
+  	<spacer/>
+    <v-toolbar-title class="toolbar-title cyan--text">{{ nome }}</v-toolbar-title>
+
+		<v-text-field
+			slot="extension"
+			placeholder="Procurar atividade" 
+			append-icon="search" 
+			class="search cyan--text">
+		</v-text-field>
+
   </v-toolbar>
 </template>
 
@@ -24,5 +29,8 @@ export default {
 <style scoped>
 .toolbar-title{
 	font-size: 1.5em;
+}
+.search{
+	max-width: 80%
 }
 </style>
