@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-navigation-drawer absolute clipped v-model="drawer" app class="cyan darken-1">
+    <v-navigation-drawer absolute clipped v-model="drawer" app class="grey lighten-2">
       <v-list dense>
         <v-list-tile v-for="projeto in projetos" :key="projeto.id_projeto" exact @click="currentProjeto(projeto)">
           <v-list-tile-action>
@@ -16,7 +16,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-toolbar dense fixed clipped-left app>
+    <v-toolbar dense fixed clipped-left app class="blue-grey darken-1">
       <v-toolbar-title>
         <v-toolbar-side-icon color="cyan--text" @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       </v-toolbar-title>

@@ -1,5 +1,5 @@
 <template>
-  <v-toolbar extended>
+  <v-toolbar extended class="blue-grey darken-1">
   	<spacer/>
     <v-toolbar-title class="toolbar-title cyan--text">{{ nome }}</v-toolbar-title>
 

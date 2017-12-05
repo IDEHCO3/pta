@@ -1,34 +1,58 @@
 <template>
-  <v-tabs fixed icons centered>
+  <v-tabs fixed icons centered :scrollable="false">
     <v-tabs-bar dark color="blue-grey darken-1">
       <v-tabs-slider color="cyan"></v-tabs-slider>
-      <v-tabs-item href="#tab-1">
-        <v-icon color="cyan">info</v-icon>
+
+      <v-tabs-item href="#projeto-info">
+        <v-icon color="light-blue accent-2">info</v-icon>
       </v-tabs-item>
-      <v-tabs-item href="#tab-2">
-        <v-icon color="cyan">monetization_on</v-icon>
+
+      <v-tabs-item href="#projeto-custeio">
+        <v-icon color="yellow accent-2">monetization_on</v-icon>
       </v-tabs-item>
-      <v-tabs-item href="#tab-3">
-        <v-icon color="cyan">insert_chart</v-icon>
+
+      <v-tabs-item href="#projeto-charts">
+        <v-icon color="light-green accent-2">insert_chart</v-icon>
       </v-tabs-item>
     </v-tabs-bar>
+
     <v-tabs-items>
-      <v-tabs-content
-        v-for="i in 3"
-        :key="i"
-        :id="'tab-' + i"
-      >
-        <v-card flat>
-          <v-card-text>{{ msg }}</v-card-text>
-        </v-card>
+      <v-tabs-content id="projeto-info">
+				<projeto-info
+				:dataInicio="dataInicio"
+				:dataFim="dataFim"
+				:prioridade="prioridade"
+				:situacaoPlanejada="situacaoPlanejada"
+				:responsavel="responsavel"
+				:executora="executora"
+				></projeto-info>
+      </v-tabs-content>
+
+      <v-tabs-content id="projeto-custeio">
+				<projeto-custeio></projeto-custeio>
+      </v-tabs-content>
+
+      <v-tabs-content id="projeto-charts">
+				<projeto-charts></projeto-charts>
       </v-tabs-content>
     </v-tabs-items>
+
   </v-tabs>
 </template>
 
 <script>
+import ProjetoCharts from './ProjetoCharts';
+import ProjetoCusteio from './ProjetoCusteio';
+import ProjetoInfo from './ProjetoInfo';
+
 export default {
 	name: 'ProjetoTabs',
+	props: [
+		'dataInicio', 'dataFim', 'prioridade', 'situacaoPlanejada', 'responsavel', 'executora',
+	],
+	components: {
+		ProjetoCharts, ProjetoCusteio, ProjetoInfo,
+	},
 	data() {
 		return {
 			msg: 'Welcome to Your Vue.js App',

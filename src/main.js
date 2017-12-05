@@ -9,7 +9,7 @@ import Vuetify from 'vuetify';
 import('../node_modules/vuetify/dist/vuetify.min.css');
 import store from './vuex';
 
-axios.defaults.baseURL = 'http://127.0.0.1:3000/'; //'http://172.30.11.26:3000/adm-list/'
+axios.defaults.baseURL = 'http://172.30.11.26:3000/adm-list/';
 
 Vue.config.productionTip = false;
 Vue.use(Vuetify);
