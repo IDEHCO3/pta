@@ -1,4 +1,4 @@
-const urlToId = url => parseInt(url.split('/').reverse()[1], 10);
+import { compareId, urlToId } from '@/utils/utils';
 
 export default {
 	setProjetoAtual(state, projeto) {
@@ -10,7 +10,7 @@ export default {
 		state.atividades = [];
 		this.state.atividade_list.map((atividade) => {
 			const idAtividadeProjeto = urlToId(atividade.id_projeto);
-			if (idAtividadeProjeto === state.id_projeto) {
+			if (compareId(idAtividadeProjeto, state.id_projeto)) {
 				state.atividades.push(atividade);
 			}
 			return false;

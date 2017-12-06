@@ -1,4 +1,4 @@
-const sortByName = (a, b) => (a.nome > b.nome ? 1 : -1);
+import { sortByName } from '@/utils/utils';
 
 export default {
 
